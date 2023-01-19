@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Startup from './components/Startup';
-import Translation from './components/Translation';
-import Profile from './components/Profile';
+import Startup from './Views/Startup';
+import Translation from './Views/Translation';
+import Profile from './Views/Profile';
 
 function App() {
   return (
