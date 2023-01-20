@@ -1,3 +1,4 @@
+import withAuth from "../hoc/withAuth"
 
 
 const Translation = () => {
@@ -8,4 +9,4 @@ const Translation = () => {
     )
     
     }
-    export default Translation
+    export default withAuth(Translation)
