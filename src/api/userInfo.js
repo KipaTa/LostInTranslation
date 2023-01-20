@@ -3,11 +3,14 @@ const apiUrl =  process.env.REACT_APP_API_URL
 
 const checkForUser = async (username) => {
     try{
+        console.log("username from check " + username)
         const response = await fetch(`${apiUrl}?username=${username}`)
+        console.log(response);
         if(!response.ok){
             throw new Error('Could not complete request.')
         }
-        const data = await response.json()
+        const data = await response.json();
+        console.log(data);
         return [null, data]
     }
     catch (error) {
@@ -40,6 +43,7 @@ const createUser =  async (username) => {
 }
 
 export const loginUser = async (username) => {
+    console.log("Username from loginUser: " + username)
     const [checkError, user] = await checkForUser(username)
 
     if(checkError !== null) {

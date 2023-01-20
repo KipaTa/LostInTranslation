@@ -1,7 +1,5 @@
-
 import { useForm } from "react-hook-form";
-import {loginUser} from '../../api/userInfo';
-const apiURL =  process.env.REACT_APP_API_URL
+import { loginUser } from "../../api/userInfo";
 
 const usernameConfig = {
   required: true,
@@ -15,40 +13,39 @@ const StartupForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (username) => {
-    console.log(apiURL)
+  const onSubmit = async ({username}) => {
+    console.log("username from onsubmit " + username);
     const [error, user] = await loginUser(username);
-    console.log('Error: ' + error)
-    console.log('User: ' + user)
+    console.log("Error: " + error);
+    console.log("User: " , user);
   };
 
   console.log(errors);
 
   const errorMessage = (() => {
-    if (!errors.username){
-        return null;
+    if (!errors.username) {
+      return null;
     }
-    if (errors.username && errors.username.type === 'required'){
-        return <span>Username is required</span>;
+    if (errors.username && errors.username.type === "required") {
+      return <span>Username is required</span>;
     }
-    if (errors.username && errors.username.type === 'minLength'){
-        return <span>Username has to be longer than 2 characters</span>
+    if (errors.username && errors.username.type === "minLength") {
+      return <span>Username has to be longer than 2 characters</span>;
     }
-
-  }) ()
+  })();
 
   return (
     <>
       <h2> Get Started</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
-          <label htmlFor="Username">Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             placeholder="name"
             {...register("username", usernameConfig)}
           />
-        {errorMessage}
+          {errorMessage}
         </fieldset>
 
         <button type="submit">Continue</button>
