@@ -1,5 +1,5 @@
-const apiURL =  process.env.API_URL
-const apiKey =  process.env.API_KEY
+const apiURL =  process.env.REACT_APP_API_URL
+const apiKey =  process.env.REACT_APP_API_KEY
 
 fetch(`${apiURL}/translations`, {
         method: 'POST',
