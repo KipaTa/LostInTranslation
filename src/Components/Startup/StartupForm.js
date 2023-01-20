@@ -2,9 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../../api/userInfo";
 
-const apiURL =  process.env.REACT_APP_API_URL
-
-
 const usernameConfig = {
   required: true,
   minLength: 3,
