@@ -4,8 +4,8 @@ const Startup = () => {
 return(
     <>
         <h3>Lost in Translation</h3>
-        <StartupForm>
-        </StartupForm>
+        <StartupForm />
+       
     </>
 )
 
