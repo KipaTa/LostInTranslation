@@ -1,5 +1,8 @@
+import { createHeaders } from "."
+
 const apiKey =  process.env.REACT_APP_API_KEY
 const apiUrl =  process.env.REACT_APP_API_URL
+
 
 const checkForUser = async (username) => {
     try{
@@ -14,7 +17,7 @@ const checkForUser = async (username) => {
         return [null, data]
     }
     catch (error) {
-        return [error.message, [] ]
+        return [error.message, [] ] 
     }
 }
 
@@ -22,10 +25,7 @@ const createUser =  async (username) => {
     try{
         const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: {
-                'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
-            },
+            headers: createHeaders(),
             body: JSON.stringify({
                 username,
                 translations: [] 
@@ -43,17 +43,21 @@ const createUser =  async (username) => {
 }
 
 export const loginUser = async (username) => {
+<<<<<<< HEAD
     console.log("Username from loginUser: " + username)
     const [checkError, user] = await checkForUser(username)
+=======
+    const [checkError, user] = await checkForUser(username) 
+>>>>>>> 627ec2e8e0cbeba68993a3f94885bebbad04122f
 
     if(checkError !== null) {
-        return [checkError, null]
+        return [ checkError, null ]
     }
 
     if(user.length > 0){
         return [null, user.pop()]
     }
-
+    
     return await createUser(username)
 
 }

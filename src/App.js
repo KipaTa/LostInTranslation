@@ -5,6 +5,7 @@ import Translation from './Views/Translation';
 import Profile from './Views/Profile';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
