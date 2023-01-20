@@ -1,12 +1,9 @@
 import { createHeaders } from "."
-
-const apiKey =  process.env.REACT_APP_API_KEY
 const apiUrl =  process.env.REACT_APP_API_URL
 
 
 const checkForUser = async (username) => {
     try{
-        console.log("username from check " + username)
         const response = await fetch(`${apiUrl}?username=${username}`)
         console.log(response);
         if(!response.ok){
@@ -43,12 +40,7 @@ const createUser =  async (username) => {
 }
 
 export const loginUser = async (username) => {
-<<<<<<< HEAD
-    console.log("Username from loginUser: " + username)
-    const [checkError, user] = await checkForUser(username)
-=======
     const [checkError, user] = await checkForUser(username) 
->>>>>>> 627ec2e8e0cbeba68993a3f94885bebbad04122f
 
     if(checkError !== null) {
         return [ checkError, null ]
