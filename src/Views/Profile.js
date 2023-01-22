@@ -4,7 +4,6 @@ import ProfileHistory from "../Components/Profile/ProfileHistory"
 import { useUser } from "../context/UserContext"
 import withAuth from "../hoc/withAuth"
 
-
 const Profile = () => {
 
     const {user} = useUser()
@@ -13,7 +12,7 @@ const Profile = () => {
         <>
         <h1>Profile</h1>
         <ProfileHeader username={user.username}/>
-        <ProfileActions/>
+        <ProfileActions />
         <ProfileHistory translations = {user.translations}/>
         </>
     )
