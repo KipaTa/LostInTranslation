@@ -1,6 +1,4 @@
 import { useForm } from "react-hook-form";
-import TranslationOutput from "./TranslationOutput";
-
 
 
 const translationConfig = {
@@ -9,14 +7,12 @@ const translationConfig = {
   };
   
 
-const TranslationInput = () => {
+const TranslationInput = ({onClick}) => {
 
     const { register, handleSubmit} = useForm()
  
-    const onSubmit = (data) => {
-        const input = data.translation
-        TranslationOutput(input)
-        console.log(data);
+    const onSubmit = ({translation}) => {
+        onClick(translation)
     };
 
     return (
@@ -30,13 +26,8 @@ const TranslationInput = () => {
               {...register("translation", translationConfig)}
             />
           </fieldset>
-  
           <button type="submit">Translate!</button>
         </form>
-
-        <section>
-
-        </section>
       </>
       
     )

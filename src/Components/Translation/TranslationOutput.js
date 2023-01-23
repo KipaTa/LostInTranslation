@@ -1,18 +1,33 @@
+import { addTranslation } from "../../api/translation";
+import { STORAGE_KEY_USER } from "../../const/storageKeys";
+import { useUser } from "../../context/UserContext";
+import { storageSave } from "../../utils/storage";
+import TranslationInput from "./TranslationInput";
 
-const TranslationOutput = (input) => {
-  const array = input.toString().split("");
-  console.log(array);
-  const translationList = array.map((letter, index) => (
-    <img
-      key={index + "-" + letter}
-      alt=""
-      src={`individial_signs/${letter}.png`}
-    ></img>
-  ));
+const TranslationOutput = () => {
+    const {user, setUser} = useUser()
+
+  const handleClick = async (notes) => {
+		const [error, updatedUser] = await addTranslation(user, notes)
+		if(error !== null ) {
+			return 
+		}
+
+		storageSave(STORAGE_KEY_USER,updatedUser)
+		setUser(updatedUser)
+
+		console.log(error)
+		console.log("Result" , updatedUser)
+
+  };
+
+  //const array = note.toString().split("");
+  //const TranslationList = array.map((letter, index) => (<TranslationItem key={index + "-" + letter} src={`individial_signs/${letter}.png`}></TranslationItem>));
+   
   return (
     <>
       <h1>Translation Output</h1>
-      {translationList}
+      <TranslationInput onClick={handleClick}></TranslationInput>
     </>
   );
 };
