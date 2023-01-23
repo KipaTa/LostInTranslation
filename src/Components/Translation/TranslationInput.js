@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import TranslationOutput from "./TranslationOutput";
 
 
+
 const translationConfig = {
     required: true,
     maxLength: 40,
