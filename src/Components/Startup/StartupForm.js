@@ -5,6 +5,12 @@ import { storageSave } from "../../utils/storage";
 import { useNavigate } from 'react-router-dom'
 import { useUser } from "../../context/UserContext";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
+import * as React from 'react';
+import { TextField, Button, Card } from "@mui/material";
+
+
+
+
 
 const usernameConfig = {
   required: true,
@@ -58,23 +64,38 @@ const StartupForm = () => {
 
   return (
     <>
-      <h2> Get Started</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            placeholder="name"
-            {...register("username", usernameConfig)}
-          />
-          {errorMessage}
-        </fieldset>
+  <div style={{ display: 'flex', justifyContent: 'center'}}>
+  <Card variant="outlined" sx={{ maxWidth: 450, padding: 2 }}>
+      <div className="startUpDiv"> 
+        <div>
+          <img src={'/Logo.png'} alt="Logo" className="logo" />
+        </div>
 
-        <button type="submit" disabled={ loading }>Continue</button>
+        <div>
+          <h2> Get Started</h2>
+        </div>
+      </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="inputForm">
+            <h4>Give your username:</h4>
+            <TextField 
+              id="outlined-helperText"     
+              label="username"
+              variant="outlined"
+              size="small"
+              {...register("username", usernameConfig)}
+              />
 
-        { loading && <p>Logging in...</p> }
-        { apiError && <p>{ apiError }</p>}
-      </form>
+            <br/>
+              {errorMessage}
+            <br/>
+
+          <Button type="submit" variant="contained" sx={{m:4}} disabled={ loading }>Continue</Button>
+      
+          { loading && <p>Logging in...</p> }
+          { apiError && <p>{ apiError }</p>}
+        </form>
+      </Card>
+      </div>
     </>
   );
 };
