@@ -1,9 +1,10 @@
 import { useState } from "react";
-
+import { addTranslation } from "../../api/translation";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import { useUser } from "../../context/UserContext";
 import { storageSave } from "../../utils/storage";
 import TranslationInput from "./TranslationInput";
+import TranslationItem from "./TranslationItem";
 
 
 const TranslationOutput = () => {
@@ -31,7 +32,8 @@ const TranslationOutput = () => {
     <>
       <h1>Translation Output</h1>
       <TranslationInput onClick={handleClick} ></TranslationInput>
-			
+			<TranslationItem array={letters}/>
+
     </>
   );
 };

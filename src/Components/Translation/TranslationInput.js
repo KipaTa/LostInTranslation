@@ -15,6 +15,7 @@ const TranslationInput = ({onClick}) => {
       onClick(translation)
   };
 
+
   return (
       <>
       <h2> Get Started</h2>
@@ -31,6 +32,7 @@ const TranslationInput = ({onClick}) => {
     </>
     
   )
+
 }
 
 export default TranslationInput
