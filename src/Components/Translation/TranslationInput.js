@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Button, TextField, Card } from "@mui/material";
 
 
 const translationConfig = {
@@ -16,18 +17,27 @@ const TranslationInput = ({onClick}) => {
     };
 
     return (
-        <>
-        <h2> Get Started</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <fieldset>
-            <input
-              type="text"
-              placeholder="What do you wanna sign?"
-              {...register("translation", translationConfig)}
-            />
-          </fieldset>
-          <button type="submit">Translate!</button>
-        </form>
+      <>
+      <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <Card variant="outlined" sx={{ maxWidth: 450, padding: 2 }}>
+          
+            <form onSubmit={handleSubmit(onSubmit)}>
+              
+
+              <TextField 
+                  id="outlined-helperText"     
+                  label="What do you wanna sign?"
+                  variant="outlined"
+                  size="small"
+                  {...register("translation", translationConfig)}
+                  />
+
+                <br></br>
+
+              <Button type="submit" variant="contained" sx={{m:2}} >Translate!</Button>
+            </form>
+        </Card>
+        </div>
       </>
       
     )

@@ -5,6 +5,7 @@ import { useUser } from "../../context/UserContext";
 import { storageSave } from "../../utils/storage";
 import TranslationInput from "./TranslationInput";
 import TranslationItem from "./TranslationItem";
+import { Card } from "@mui/material";
 
 const TranslationOutput = () => {
     const {user, setUser} = useUser()
@@ -33,9 +34,16 @@ const TranslationOutput = () => {
 	
   return (
     <>
-      <h1>Translation Output</h1>
+      <h1>Translation Form</h1>
       <TranslationInput onClick={handleClick} ></TranslationInput>
+
+	  <div style={{ display: 'flex', justifyContent: 'center'}}>
+	  	<Card variant="outlined" sx={{ minWidth: 450, minHeight: 450, padding: 2, margin: 4 }}>
+			<h2>Translation</h2>
 			<TranslationItem array={letters}/>
+			
+		</Card>
+	</div>
     </>
   );
 };
