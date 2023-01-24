@@ -20,9 +20,13 @@ const TranslationOutput = () => {
 		storageSave(STORAGE_KEY_USER,updatedUser)
 		setUser(updatedUser)
 
-		const array = notes.toLowerCase().match(/[a-z]/g)
-		setLetters(array)
+		const regExp = /[a-zA-Z]/g
 
+		if (regExp.test(notes)) {
+			const array = notes.toLowerCase().match(/[a-z]/g)
+			setLetters(array)
+		} 
+		
 		console.log(error)
 		console.log("Result" , updatedUser)
 
