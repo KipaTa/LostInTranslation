@@ -7,6 +7,7 @@ import TranslationInput from "./TranslationInput";
 import TranslationItem from "./TranslationItem";
 import { Card } from "@mui/material";
 
+
 const TranslationOutput = () => {
     const {user, setUser} = useUser()
 		const [letters, setLetters] = useState([])
@@ -41,9 +42,11 @@ const TranslationOutput = () => {
 	  	<Card variant="outlined" sx={{ minWidth: 450, minHeight: 450, padding: 2, margin: 4 }}>
 			<h2>Translation</h2>
 			<TranslationItem array={letters}/>
+
 			
 		</Card>
 	</div>
+
     </>
   );
 };

@@ -3,12 +3,13 @@ import { Button, TextField, Card } from "@mui/material";
 
 
 const translationConfig = {
-    required: true,
-    maxLength: 40,
-  };
-  
+  required: true,
+  maxLength: 40,
+};
+
 
 const TranslationInput = ({onClick}) => {
+
 
     const { register, handleSubmit} = useForm()
  
@@ -41,7 +42,7 @@ const TranslationInput = ({onClick}) => {
       </>
       
     )
+
 }
 
 export default TranslationInput
-
