@@ -8,10 +8,6 @@ import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import * as React from 'react';
 import { TextField, Button, Card } from "@mui/material";
 
-
-
-
-
 const usernameConfig = {
   required: true,
   minLength: 3,
