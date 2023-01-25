@@ -1,13 +1,22 @@
 import ProfileHistoryItem from "./ProfileHistoryItem"
+import { Card } from "@mui/material";
 
 const ProfileHistory = ({translations}) => {
-    const translationList = translations.map(
-        (translation, index) => <ProfileHistoryItem key={index + "-" +  translation} translation={translation} />)
-    return (
-        <section> 
-            <h4> Your translation history</h4>
-            <ul>{translationList}</ul>
-        </section>
+
+    let translationList = translations.map(
+        (translation, index) => <ProfileHistoryItem 
+            key={index + "-" +  translation} 
+            translation={translation} />)
+    
+    translationList = translationList.slice(translations.length - 10, translationList.length).reverse()
+
+        return (
+        <div style={{ display: 'flex', justifyContent: 'center'}}>
+            <Card variant="outlined" sx={{ minWidth: 300, minHeight: 300}}>
+            <h3> Your last 10 translations:</h3>
+            <p>{translationList}</p>
+            </Card>
+        </div>
     )
 }
 
