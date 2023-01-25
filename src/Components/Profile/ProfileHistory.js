@@ -15,15 +15,15 @@ const ProfileHistory = ({translations}) => {
             <Card 
                 variant="outlined"
                 sx={{
-                  minWidth: 550,
-                  minHeight: 450,
+                  minWidth: "50%",
+                  minHeight: "50%",
                   padding: 2,
                   margin: 4,
                   bgcolor: "#E7B355",
                   borderRadius: "30px",
                 }}
             >
-            <h3 sx={{ fontFamily: "LoveFont" }}> Your last 10 translations:</h3>
+            <h3> Your last 10 translations:</h3>
             <p>{translationList}</p>
             </Card>
         </div>
