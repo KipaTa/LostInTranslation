@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import * as React from "react";
-import { TextField, Button, Card } from "@mui/material";
+import { TextField, Button, Card, InputAdornment } from "@mui/material";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 const usernameConfig = {
   required: true,
@@ -29,8 +30,8 @@ const StartupForm = () => {
 
   //Side Effects
   useEffect(() => {
-    if (user !== null){
-      navigate("/translation")
+    if (user !== null) {
+      navigate("/translation");
     }
   }, [user, navigate]);
 
@@ -81,6 +82,13 @@ const StartupForm = () => {
               label="username"
               variant="outlined"
               size="small"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <KeyboardIcon />
+                  </InputAdornment>
+                ),
+              }}
               {...register("username", usernameConfig)}
             />
 
@@ -91,7 +99,16 @@ const StartupForm = () => {
             <Button
               type="submit"
               variant="contained"
-              sx={{ m: 4 }}
+              sx={{
+                ":hover": {
+                  bgcolor: "#845EC2",
+                  color: "white",
+                },
+                m: 4,
+                fontSize:"20px",
+                fontFamily: "LoveFont",
+                bgcolor: "#845EC2",
+              }}
               disabled={loading}
             >
               Continue
