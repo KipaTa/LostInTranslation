@@ -12,8 +12,18 @@ const ProfileHistory = ({translations}) => {
 
         return (
         <div style={{ display: 'flex', justifyContent: 'center'}}>
-            <Card variant="outlined" sx={{ minWidth: 300, minHeight: 300}}>
-            <h3> Your last 10 translations:</h3>
+            <Card 
+                variant="outlined"
+                sx={{
+                  minWidth: 550,
+                  minHeight: 450,
+                  padding: 2,
+                  margin: 4,
+                  bgcolor: "#E7B355",
+                  borderRadius: "30px",
+                }}
+            >
+            <h3 sx={{ fontFamily: "LoveFont" }}> Your last 10 translations:</h3>
             <p>{translationList}</p>
             </Card>
         </div>

@@ -36,9 +36,37 @@ const ProfileActions = () => {
 
     return (
         <div>
-            <Button type="submit" variant="contained" sx={{m:2}} onClick={ handleClearHistoryClick }>Clear Translation History</Button>
+            <Button 
+                type="submit"
+                variant="contained"
+                sx={{
+                  ":hover": {
+                    bgcolor: "#845EC2",
+                    color: "white",
+                  },
+                  m: 2,
+                  fontFamily: "LoveFont",
+                  bgcolor: "#845EC2",
+                }}
+                onClick={ handleClearHistoryClick }
+                >Clear Translation History
+            </Button>
             
-            <Button type="submit" variant="contained" sx={{m:2}} onClick={ handleLogout }>Logout</Button>
+            <Button 
+                type="submit"
+                variant="contained"
+                sx={{
+                  ":hover": {
+                    bgcolor: "#845EC2",
+                    color: "white",
+                  },
+                  m: 2,
+                  fontFamily: "LoveFont",
+                  bgcolor: "#845EC2",
+                }}
+                onClick={ handleLogout }
+                >Logout
+            </Button>
         </div>
     )
 }
