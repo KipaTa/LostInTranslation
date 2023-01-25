@@ -7,46 +7,51 @@ import TranslationInput from "./TranslationInput";
 import TranslationItem from "./TranslationItem";
 import { Card } from "@mui/material";
 
-
 const TranslationOutput = () => {
-    const {user, setUser} = useUser()
-		const [letters, setLetters] = useState([])
+  const { user, setUser } = useUser();
+  const [letters, setLetters] = useState([]);
 
   const handleClick = async (notes) => {
-		const [error, updatedUser] = await addTranslation(user, notes)
-		if(error !== null ) {
-			return 
-		}
+    const [error, updatedUser] = await addTranslation(user, notes);
+    if (error !== null) {
+      return;
+    }
 
-		storageSave(STORAGE_KEY_USER,updatedUser)
-		setUser(updatedUser)
+    storageSave(STORAGE_KEY_USER, updatedUser);
+    setUser(updatedUser);
 
-		const regExp = /[a-zA-Z]/g
+    const regExp = /[a-zA-Z]/g;
 
-		if (regExp.test(notes)) {
-			const array = notes.toLowerCase().match(/[a-z]/g)
-			setLetters(array)
-		} 
-		
-		console.log(error)
-		console.log("Result" , updatedUser)
+    if (regExp.test(notes)) {
+      const array = notes.toLowerCase().match(/[a-z]/g);
+      setLetters(array);
+    }
 
+    console.log(error);
+    console.log("Result", updatedUser);
   };
-	
+
   return (
     <>
-	<div style={{padding: 10}}>
-    <h2>Let's start translating!</h2>
-	</div>
-      <TranslationInput onClick={handleClick} ></TranslationInput>
+      <h1>Sign Away!</h1>
+      <TranslationInput onClick={handleClick}></TranslationInput>
 
-	  <div style={{ display: 'flex', justifyContent: 'center'}}>
-	  	<Card variant="outlined" sx={{ minWidth: 450, minHeight: 450, padding: 1, margin: 4 }}>
-			<h3>Translation</h3>
-			<TranslationItem array={letters}/>
-		</Card>
-	</div>
-
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Card
+          variant="outlined"
+          sx={{
+            minWidth: 550,
+            minHeight: 450,
+            padding: 2,
+            margin: 4,
+            bgcolor: "#E7B355",
+            borderRadius: "30px",
+          }}
+        >
+          <h2 sx={{ fontFamily: "LoveFont" }}>In Sign</h2>
+          <TranslationItem array={letters} />
+        </Card>
+      </div>
     </>
   );
 };
