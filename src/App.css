@@ -4,12 +4,7 @@
 
 body {
   background-color: lightblue;
-  color: darkslategray;
-}
-
-h1 {
-  color: goldenrod;
-  font-weight: bold;
+  
 }
 
 
@@ -17,6 +12,7 @@ h1 {
   height: 100px;
   margin-right: 5px
 }
+
 
 .inputForm {
   margin: 20px;
