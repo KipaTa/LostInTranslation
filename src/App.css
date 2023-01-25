@@ -3,13 +3,15 @@
 }
 
 body {
-  background-color: lightblue;
-  color: darkslategray;
+  background-color: #FFC75F;
+  color: white;
 }
 
 h1 {
   color: goldenrod;
   font-weight: bold;
+  font-size: 50px;
+  font-family: "LoveFont";
 }
 
 
@@ -42,5 +44,9 @@ h1 {
 
 .App-link {
   color: #61dafb;
+}
+
+.MuiOutlinedInput-notchedOutline{
+  border-color: #E7B355 !important;
 }
 
