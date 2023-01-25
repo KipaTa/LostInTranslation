@@ -1,6 +1,6 @@
 const ProfileHistoryItem = ({translation}) => {
 
-    return <li>{translation}</li>
+    return <p>{translation}</p>
 }
 
 export default ProfileHistoryItem

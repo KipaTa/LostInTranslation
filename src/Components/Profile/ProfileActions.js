@@ -2,6 +2,7 @@ import { STORAGE_KEY_USER } from "../../const/storageKeys"
 import { useUser } from "../../context/UserContext"
 import { storageDelete, storageSave } from "../../utils/storage"
 import { clearTranslationHistory } from "../../api/translation"
+import { Button } from "@mui/material";
 
 const ProfileActions = () => {
 
@@ -34,10 +35,11 @@ const ProfileActions = () => {
     }
 
     return (
-        <ul>
-            <li><button onClick={ handleClearHistoryClick }>Clear History</button></li>
-            <li><button onClick={ handleLogout }>Logout</button></li>
-        </ul>
+        <div>
+            <Button type="submit" variant="contained" sx={{m:2}} onClick={ handleClearHistoryClick }>Clear Translation History</Button>
+            
+            <Button type="submit" variant="contained" sx={{m:2}} onClick={ handleLogout }>Logout</Button>
+        </div>
     )
 }
 

@@ -35,7 +35,9 @@ const TranslationOutput = () => {
 	
   return (
     <>
-      <h1>Translation Form</h1>
+	<div style={{padding: 10}}>
+      <h2>Translation Form</h2>
+	</div>
       <TranslationInput onClick={handleClick} ></TranslationInput>
 
 	  <div style={{ display: 'flex', justifyContent: 'center'}}>
