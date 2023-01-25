@@ -1,48 +1,85 @@
 import { useForm } from "react-hook-form";
-import { Button, TextField, Card } from "@mui/material";
-
+import { Button, TextField, Card, InputAdornment } from "@mui/material";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 const translationConfig = {
   required: true,
+
   maxLength: 40,
 };
 
+const TranslationInput = ({ onClick }) => {
+  const { register, handleSubmit } = useForm();
 
-const TranslationInput = ({onClick}) => {
+  const onSubmit = ({ translation }) => {
+    onClick(translation);
+  };
 
+  return (
+    <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Card
+          variant="outlined"
+          sx={{
+            minWidth: 550,
+            minHeight: 200,
+            padding: 2,
+            bgcolor: "#E7B355",
+            borderRadius: "30px",
+            alignItems: "center",
+          }}
+        >
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <TextField
+              id="outlined-helperText"
+              placeholder="What do you wanna sign?"
+              variant="outlined"
+              size="medium"
+              fullWidth
+              margin="normal"
+              style={{
+                backgroundColor: "#EFEFEF",
+                borderRadius: "15px",
+                borderColor: "#E7B355",
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <KeyboardIcon />
+                  </InputAdornment>
+                ),
+              }}
+              {...register("translation", translationConfig)}
+            />
 
-    const { register, handleSubmit} = useForm()
- 
-    const onSubmit = ({translation}) => {
-        onClick(translation)
-    };
+            <br></br>
 
-    return (
-      <>
-      <div style={{ display: 'flex', justifyContent: 'center'}}>
-        <Card variant="outlined" sx={{ maxWidth: 450, padding: 2 }}>
-          
-            <form onSubmit={handleSubmit(onSubmit)}>
-              
-
-              <TextField 
-                  id="outlined-helperText"     
-                  label="What do you wanna sign?"
-                  variant="outlined"
-                  size="small"
-                  {...register("translation", translationConfig)}
-                  />
-
-                <br></br>
-
-              <Button type="submit" variant="contained" sx={{m:2}} >Translate!</Button>
-            </form>
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                ":hover": {
+                  bgcolor: "#845EC2",
+                  color: "white",
+                },
+                m: 2,
+                fontFamily: "LoveFont",
+                bgcolor: "#845EC2",
+              }}
+            >
+              Translate!
+            </Button>
+          </form>
         </Card>
-        </div>
-      </>
-      
-    )
+      </div>
+    </>
+  );
+};
 
-}
-
-export default TranslationInput
+export default TranslationInput;

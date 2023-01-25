@@ -14,23 +14,25 @@ const Navbar = () => {
   const { user } = useUser();
 
   return (
-    <AppBar position="absolute">
+    <AppBar position="sticky" sx={{ bgcolor: "#FFC75F" }}>
       <Container maxWidth="l">
         <Toolbar disableGutters>
+        <div>
+              <img src={"/Logo-Hello.png"} alt="Logo" className="logo" />
+            </div>
           <Box sx={{ flexGrow: 1 }}>
             <Typography
               id="Title"
-              variant="h3"
               noWrap
               component="a"
               href="/translation"
               sx={{
                 display: { xs: "none", md: "flex" },
                 letterSpacing: "2px",
-                fontSize: 22,
-                fontFamily: "Courier new",
+                fontSize: "30px",
                 color: "inherit",
                 textDecoration: "none",
+                fontFamily: "LoveFont",
               }}
             >
               Lost in translation
@@ -48,10 +50,11 @@ const Navbar = () => {
                 <Box>
                   <Button
                     href="/translation"
-                    variant="h7"
                     sx={{
                       color: "inherit",
                       textDecoration: "none",
+                      fontFamily: "LoveFont",
+                      fontsize: "30px",
                     }}
                   >
                     Translate
