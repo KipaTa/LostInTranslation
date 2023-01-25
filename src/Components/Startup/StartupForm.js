@@ -26,7 +26,7 @@ const StartupForm = () => {
   //Side Effects
   useEffect(() => {
     if (user !== null){
-      navigate('/profile')
+      navigate('/translation')
     }
   }, [ user, navigate])
 
