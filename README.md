@@ -14,19 +14,19 @@ The applications purpose is for the user to be able to translate words in to Ame
 
 <a name="feats"></a>
 ## 2. Features
-..* Translate text in to sign language
-..* Authentication
-..* Store users history and delete when needed
+* Translate text in to sign language
+* Authentication
+* Store users history and delete when needed
 
 <a name="tech"></a>
 ## 3. Technologies 
-..* React
-..* Javascript
-..* HTML/CSS
-..* REST API
-..* Material UI
-..* Glitch
-..* Vercel
+* React
+* Javascript
+* HTML/CSS
+* REST API
+* Material UI
+* Glitch
+* Vercel
 
 <a name="use"></a>
 ## 4. Usage
