@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import * as React from "react";
-import { TextField, Button, Card } from "@mui/material";
+import { TextField, Button, Card, InputAdornment } from "@mui/material";
+import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 const usernameConfig = {
   required: true,
@@ -64,7 +65,17 @@ const StartupForm = () => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Card variant="outlined" sx={{ maxWidth: 450, padding: 2 }}>
+        <Card 
+          variant="outlined"
+          sx={{
+            minWidth: 400,
+            minHeight: 200,
+            padding: 2,
+            bgcolor: "#E7B355",
+            borderRadius: "30px",
+            alignItems: "center",
+          }}
+          >
           <div className="startUpDiv">
             <div>
               <img src={"/Logo.png"} alt="Logo" className="logo" />
@@ -75,12 +86,26 @@ const StartupForm = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="inputForm">
-            <h4>Give your username:</h4>
+            
             <TextField
               id="outlined-helperText"
-              label="username"
+              placeholder="What is your name?"
               variant="outlined"
-              size="small"
+              size="medium"
+              fullWidth
+              margin="normal"
+              style={{
+                backgroundColor: "#EFEFEF",
+                borderRadius: "15px",
+                borderColor: "#E7B355",
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <KeyboardIcon />
+                  </InputAdornment>
+                ),
+              }}
               {...register("username", usernameConfig)}
             />
 
@@ -91,7 +116,15 @@ const StartupForm = () => {
             <Button
               type="submit"
               variant="contained"
-              sx={{ m: 4 }}
+              sx={{
+                ":hover": {
+                  bgcolor: "#845EC2",
+                  color: "white",
+                },
+                m: 2,
+                fontFamily: "LoveFont",
+                bgcolor: "#845EC2",
+              }}
               disabled={loading}
             >
               Continue
