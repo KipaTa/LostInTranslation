@@ -78,7 +78,7 @@ const StartupForm = () => {
           >
           <div className="startUpDiv">
             <div>
-              <img src={"/Logo.png"} alt="Logo" className="logo" />
+              <img src={"/Logo-Hello.png"} alt="Logo" className="logo" />
             </div>
 
             <div>

@@ -17,9 +17,9 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ bgcolor: "#FFC75F" }}>
       <Container maxWidth="l">
         <Toolbar disableGutters>
-        <div>
-              <img src={"/Logo-Hello.png"} alt="Logo" className="logo" />
-            </div>
+          <div>
+            <img src={"/Logo.png"} alt="Logo" className="logo" />
+          </div>
           <Box sx={{ flexGrow: 1 }}>
             <Typography
               id="Title"
@@ -54,7 +54,7 @@ const Navbar = () => {
                       color: "inherit",
                       textDecoration: "none",
                       fontFamily: "LoveFont",
-                      fontsize: "30px",
+                      fontsize: "50px",
                     }}
                   >
                     Translate

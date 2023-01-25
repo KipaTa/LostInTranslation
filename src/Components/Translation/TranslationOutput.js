@@ -26,9 +26,6 @@ const TranslationOutput = () => {
       const array = notes.toLowerCase().match(/[a-z]/g);
       setLetters(array);
     }
-
-    console.log(error);
-    console.log("Result", updatedUser);
   };
 
   return (
@@ -40,15 +37,13 @@ const TranslationOutput = () => {
         <Card
           variant="outlined"
           sx={{
-            minWidth: 550,
-            minHeight: 450,
+            minWidth: "50%",
             padding: 2,
             margin: 4,
             bgcolor: "#E7B355",
             borderRadius: "30px",
           }}
         >
-          <h2 sx={{ fontFamily: "LoveFont" }}>In Sign</h2>
           <TranslationItem array={letters} />
         </Card>
       </div>
