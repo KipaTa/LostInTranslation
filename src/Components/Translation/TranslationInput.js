@@ -20,6 +20,7 @@ const TranslationInput = ({onClick}) => {
     return (
       <>
       <div style={{ display: 'flex', justifyContent: 'center'}}>
+      <img src={'/Logo-Hello.png'} alt="LogoHello" className="logo2" />
         <Card variant="outlined" sx={{ maxWidth: 450, padding: 2 }}>
           
             <form onSubmit={handleSubmit(onSubmit)}>

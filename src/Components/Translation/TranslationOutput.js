@@ -36,16 +36,14 @@ const TranslationOutput = () => {
   return (
     <>
 	<div style={{padding: 10}}>
-      <h2>Translation Form</h2>
+    <h2>Let's start translating!</h2>
 	</div>
       <TranslationInput onClick={handleClick} ></TranslationInput>
 
 	  <div style={{ display: 'flex', justifyContent: 'center'}}>
-	  	<Card variant="outlined" sx={{ minWidth: 450, minHeight: 450, padding: 2, margin: 4 }}>
-			<h2>Translation</h2>
+	  	<Card variant="outlined" sx={{ minWidth: 450, minHeight: 450, padding: 1, margin: 4 }}>
+			<h3>Translation</h3>
 			<TranslationItem array={letters}/>
-
-			
 		</Card>
 	</div>
 
