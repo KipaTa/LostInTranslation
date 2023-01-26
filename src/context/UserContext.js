@@ -3,8 +3,10 @@ import { useState } from "react";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
 import { storageRead } from "../utils/storage";
 
-//Context -> exposing
-const UserContext = createContext();
+//UserContext to manage the user
+
+//Context -> exposing the value
+const UserContext = createContext()
 
 export const useUser = () => {
   return useContext(UserContext); // { user, setUser }
