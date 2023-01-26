@@ -1,12 +1,12 @@
-import StartupForm from '../Components/Startup/StartupForm';
+import StartupForm from "../Components/Startup/StartupForm"
 
 //Startup page view
 const Startup = () => {
-return(
+  return (
     <>
-        <h1>Lost in Translation</h1>
-        <StartupForm />
+      <h1>Lost in Translation</h1>
+      <StartupForm />
     </>
-    )
+  )
 }
 export default Startup

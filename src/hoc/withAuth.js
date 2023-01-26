@@ -1,6 +1,5 @@
-import { Navigate } from "react-router-dom"
-import { useUser } from "../context/UserContext"
-
+import { Navigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 //withAuth checks if user has signed in. If signed, user is able to navigate forvard. 
 //If not signed in or user logs out, user is returned to Startup page. 

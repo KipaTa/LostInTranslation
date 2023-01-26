@@ -1,4 +1,3 @@
-
 // Storage functions to handle (Read, Save and Delete) session storage status
 export const storageSave = (key, value) => {
 

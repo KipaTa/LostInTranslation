@@ -4,10 +4,12 @@ import KeyboardIcon from "@mui/icons-material/Keyboard";
 
 const translationConfig = {
   required: true,
-
   maxLength: 40,
 };
 
+/**
+ * Contains the submit form for the translate input
+ */
 const TranslationInput = ({ onClick }) => {
   const { register, handleSubmit } = useForm();
 
@@ -69,7 +71,7 @@ const TranslationInput = ({ onClick }) => {
                   color: "white",
                 },
                 m: 2,
-                fontSize:"20px",
+                fontSize: "20px",
                 fontFamily: "LoveFont",
                 bgcolor: "#845EC2",
               }}

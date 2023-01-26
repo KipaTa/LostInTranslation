@@ -1,7 +1,7 @@
-import { createContext, useContext } from "react"
-import { useState } from "react"
-import { STORAGE_KEY_USER } from "../const/storageKeys"
-import { storageRead } from "../utils/storage"
+import { createContext, useContext } from "react";
+import { useState } from "react";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
+import { storageRead } from "../utils/storage";
 
 //UserContext to manage the user
 
@@ -9,23 +9,18 @@ import { storageRead } from "../utils/storage"
 const UserContext = createContext()
 
 export const useUser = () => {
-    return useContext(UserContext) // { user, setUser }
-}
+  return useContext(UserContext); // { user, setUser }
+};
 
 // Provider -> managing state
 const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(storageRead(STORAGE_KEY_USER));
 
-    const [ user, setUser ] = useState( storageRead( STORAGE_KEY_USER ))
+  const state = {
+    user,
+    setUser,
+  };
 
-    const state = {
-        user,
-        setUser
-    }
-
-    return (
-        <UserContext.Provider value= { state }>
-            { children }
-        </UserContext.Provider>
-    )
-}
-export default UserProvider
+  return <UserContext.Provider value={state}>{children}</UserContext.Provider>;
+};
+export default UserProvider;

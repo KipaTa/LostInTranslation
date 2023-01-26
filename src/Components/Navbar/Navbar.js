@@ -10,6 +10,10 @@ import {
 import { Container } from "@mui/system";
 import { useUser } from "../../context/UserContext";
 
+/**
+ * Nav bar the follows on the top of the page. 
+ * Contains buttons for the translation page and profile.
+ */
 const Navbar = () => {
   const { user } = useUser();
 

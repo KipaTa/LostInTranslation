@@ -4,6 +4,10 @@ import { storageDelete, storageSave } from "../../utils/storage";
 import { clearTranslationHistory } from "../../api/translation";
 import { Button } from "@mui/material";
 
+/**
+ * Actions on the profile page. Includes login out 
+ * and clearing the history.
+ */
 const ProfileActions = () => {
   const { user, setUser } = useUser();
 
@@ -44,7 +48,7 @@ const ProfileActions = () => {
             color: "white",
           },
           m: 2,
-          fontSize:"20px",
+          fontSize: "20px",
           fontFamily: "LoveFont",
           bgcolor: "#845EC2",
         }}
@@ -62,7 +66,7 @@ const ProfileActions = () => {
             color: "white",
           },
           m: 2,
-          fontSize:"20px",
+          fontSize: "20px",
           fontFamily: "LoveFont",
           bgcolor: "#845EC2",
         }}

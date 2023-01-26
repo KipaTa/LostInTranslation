@@ -7,10 +7,18 @@ import TranslationInput from "./TranslationInput";
 import TranslationItem from "./TranslationItem";
 import { Card } from "@mui/material";
 
+/**
+ * Handles the output of the translation
+ */
 const TranslationOutput = () => {
   const { user, setUser } = useUser();
   const [letters, setLetters] = useState([]);
 
+  /**
+   * Handles the translate button click from the TranslationInput.
+   * @param {*} notes 
+   * @returns error if addTranslation doesn't work
+   */
   const handleClick = async (notes) => {
     const [error, updatedUser] = await addTranslation(user, notes);
     if (error !== null) {

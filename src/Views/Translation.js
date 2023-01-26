@@ -3,10 +3,10 @@ import withAuth from "../hoc/withAuth"
 
 // Translation page view
 const Translation = () => {
-    return(
-        <>
-        <TranslationOutput></TranslationOutput>
-        </>
-    )
+  return (
+    <>
+      <TranslationOutput></TranslationOutput>
+    </>
+  )
 }
 export default withAuth(Translation)
