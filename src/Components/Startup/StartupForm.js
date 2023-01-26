@@ -14,8 +14,10 @@ const usernameConfig = {
   minLength: 3,
 };
 
+/**
+ * Handles the login page functions.
+ */
 const StartupForm = () => {
-  // Hooks
   const {
     register,
     handleSubmit,
@@ -24,21 +26,22 @@ const StartupForm = () => {
   const { user, setUser } = useUser();
   const navigate = useNavigate();
 
-  //Local state
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
 
-  //Side Effects
+  //Navigates to the translation page aster login
   useEffect(() => {
     if (user !== null) {
       navigate("/translation");
     }
   }, [user, navigate]);
 
-  // Event Handlers
+  //Handles the submit of the login form.
   const onSubmit = async ({ username }) => {
     setLoading(true);
+
     const [error, userResponse] = await loginUser(username);
+
     if (error !== null) {
       setApiError(error);
     }
@@ -49,7 +52,7 @@ const StartupForm = () => {
     setLoading(false);
   };
 
-  // Render Functions
+  //Shows the possible error messages from the input
   const errorMessage = (() => {
     if (!errors.username) {
       return null;
