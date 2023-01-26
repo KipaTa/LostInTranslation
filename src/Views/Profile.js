@@ -4,6 +4,7 @@ import ProfileHistory from "../Components/Profile/ProfileHistory";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 
+// Profile page view
 const Profile = () => {
   const { user } = useUser();
 

@@ -1,4 +1,5 @@
 
+// Storage functions to handle (Read, Save and Delete) session storage status
 export const storageSave = (key, value) => {
 
     if (!key && typeof key !== 'string') {
@@ -8,9 +9,6 @@ export const storageSave = (key, value) => {
     if (!value) {
         throw new Error('storageSave: No value provided' + key)
 }
-
-
-
     sessionStorage.setItem(key, JSON.stringify(value))
 }
 
