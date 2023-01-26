@@ -30,8 +30,8 @@ const StartupForm = () => {
 
   //Side Effects
   useEffect(() => {
-    if (user !== null){
-      navigate("/translation")
+    if (user !== null) {
+      navigate("/translation");
     }
   }, [user, navigate]);
 
@@ -78,7 +78,7 @@ const StartupForm = () => {
           >
           <div className="startUpDiv">
             <div>
-              <img src={"/Logo.png"} alt="Logo" className="logo" />
+              <img src={"/Logo-Hello.png"} alt="Logo" className="logo" />
             </div>
 
             <div>
@@ -121,7 +121,8 @@ const StartupForm = () => {
                   bgcolor: "#845EC2",
                   color: "white",
                 },
-                m: 2,
+                m: 4,
+                fontSize:"20px",
                 fontFamily: "LoveFont",
                 bgcolor: "#845EC2",
               }}

@@ -27,8 +27,8 @@ const TranslationInput = ({ onClick }) => {
         <Card
           variant="outlined"
           sx={{
-            minWidth: 550,
-            minHeight: 200,
+            minWidth: "50%",
+            minHeight: "50%",
             padding: 2,
             bgcolor: "#E7B355",
             borderRadius: "30px",
@@ -69,6 +69,7 @@ const TranslationInput = ({ onClick }) => {
                   color: "white",
                 },
                 m: 2,
+                fontSize:"20px",
                 fontFamily: "LoveFont",
                 bgcolor: "#845EC2",
               }}
