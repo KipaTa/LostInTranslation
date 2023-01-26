@@ -31,7 +31,7 @@ const ProfileHistory = ({ translations }) => {
         }}
       >
         <h3> Your last 10 translations:</h3>
-        <p>{translationList}</p>
+        <div>{translationList}</div>
       </Card>
     </div>
   );

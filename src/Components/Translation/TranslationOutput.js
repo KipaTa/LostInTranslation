@@ -22,7 +22,7 @@ const TranslationOutput = () => {
   const handleClick = async (notes) => {
     const [error, updatedUser] = await addTranslation(user, notes);
     if (error !== null) {
-      return error;
+      return;
     }
 
     storageSave(STORAGE_KEY_USER, updatedUser);

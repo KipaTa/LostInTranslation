@@ -1,9 +1,9 @@
 .App {
-  text-align: center
+  text-align: center;
 }
 
 body {
-  background-color: #FFC75F;
+  background-color: #ffc75f;
   color: white;
 }
 
@@ -14,22 +14,20 @@ h1 {
   font-family: "LoveFont";
 }
 
-h3{
+h3 {
   color: black;
   font-family: "LoveFont";
 }
 
-
 .logo {
   height: 100px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .logo2 {
   height: 150px;
-  margin-right: 10px
+  margin-right: 10px;
 }
-
 
 .inputForm {
   margin: 20px;
@@ -40,7 +38,6 @@ h3{
   flex-direction: row;
   justify-content: center;
 }
-
 
 .App-header {
   background-color: #282c34;
@@ -57,7 +54,6 @@ h3{
   color: #61dafb;
 }
 
-.MuiOutlinedInput-notchedOutline{
-  border-color: #E7B355 !important;
+.MuiOutlinedInput-notchedOutline {
+  border-color: #e7b355 !important;
 }
-

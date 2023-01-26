@@ -10,12 +10,10 @@ const apiUrl = process.env.REACT_APP_API_URL;
 const checkForUser = async (username) => {
   try {
     const response = await fetch(`${apiUrl}?username=${username}`);
-    console.log(response);
     if (!response.ok) {
       throw new Error("Could not complete request.");
     }
     const data = await response.json();
-    console.log(data);
     return [null, data];
   } catch (error) {
     return [error.message, []];

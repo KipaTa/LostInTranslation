@@ -1,13 +1,11 @@
-import StartupForm from '../Components/Startup/StartupForm';
+import StartupForm from "../Components/Startup/StartupForm";
 
 const Startup = () => {
-return(
+  return (
     <>
-        <h1>Lost in Translation</h1>
-        <StartupForm />
-       
+      <h1>Lost in Translation</h1>
+      <StartupForm />
     </>
-)
-
-}
-export default Startup
+  );
+};
+export default Startup;
